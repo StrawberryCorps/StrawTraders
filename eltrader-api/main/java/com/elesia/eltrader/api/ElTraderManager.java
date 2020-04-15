@@ -1,6 +1,13 @@
 package com.elesia.eltrader.api;
 
+import com.elesia.eltrader.api.manager.ElTrader;
+import org.bukkit.Location;
+import org.bukkit.Server;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.List;
+import java.util.Map;
 
 /*
  * Copyright (c) 26/03/2020 19:36. Author of this file Uicias
@@ -16,6 +23,16 @@ public abstract class ElTraderManager extends JavaPlugin {
 
     public static ElTraderManager getInstance(){ return INSTANCE; }
 
-    public abstract String getPrefix();
+    public static String getPrefix() { return "§8[§9ElTrader§8] §r"; }
+
+    public abstract void ajouterTrader(String flatName, String aff, Location loc, Map<ItemStack, ItemStack> echanges, Server server);
+
+    public abstract void killAllTraders();
+
+    public abstract ElTrader getByFlatName(String name);
+
+    public abstract List<String> getEveryFlat();
+
+    public abstract void removeByFlat(String nom);
 
 }

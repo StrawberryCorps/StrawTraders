@@ -20,11 +20,16 @@ public abstract class ElTrader {
     private Map<ItemStack, ItemStack> trades;
     private Server server;
 
-    public ElTrader(String flatName, String aff, Location loc, Map<ItemStack, ItemStack> echanges, Server server){
+    public ElTrader(String flatName, String aff, Location loc, Map<ItemStack, ItemStack> echanges, Server server) {
         this.flatname = flatName;
         this.affichage = aff;
+        this.location = loc;
         this.trades = echanges;
         this.server = server;
     }
+
+    public String getFlatName() { return this.flatname; }
+
+    public abstract String kill();
 
 }

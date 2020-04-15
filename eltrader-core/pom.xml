@@ -41,6 +41,15 @@
     </dependencies>
 
     <build>
+        <sourceDirectory>main/java</sourceDirectory>
+        <resources>
+            <resource>
+                <directory>resources</directory>
+                <includes>
+                    <include>plugin.yml</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
