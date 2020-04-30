@@ -32,6 +32,7 @@ public class ItemCreator {
         ItemMeta meta = item.getItemMeta();
         meta.addEnchant(Enchantment.DURABILITY, 1, true);
         meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         meta.getPersistentDataContainer().set(new NamespacedKey(ElTraderManager.getInstance(), "quete"), PersistentDataType.STRING, "oui");
         item.setItemMeta(meta);
 
