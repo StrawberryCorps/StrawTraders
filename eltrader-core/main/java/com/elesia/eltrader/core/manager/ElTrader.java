@@ -6,6 +6,7 @@ package com.elesia.eltrader.core.manager;
  * ElTrader can not be copied and/or distributed without the express permission of Elesia SAS.
  */
 
+import com.elesia.eltrader.api.utils.ItemCreator;
 import com.elesia.eltrader.core.ElTraderManager;
 import org.bukkit.Location;
 import org.bukkit.Server;
@@ -26,7 +27,7 @@ public class ElTrader extends com.elesia.eltrader.api.manager.ElTrader {
     private Server server;
     private Entity entitee;
 
-    public ElTrader(String flatName, String aff, Location loc, Map<ItemStack, ItemStack> echanges, Server server) {
+    public ElTrader(String flatName, String aff, Location loc, Map<ItemCreator, ItemCreator> echanges, Server server) {
         super(flatName, aff, loc, echanges, server);
 
         Entity entite = loc.getWorld().spawnEntity(loc, EntityType.WANDERING_TRADER);
@@ -52,9 +53,9 @@ public class ElTrader extends com.elesia.eltrader.api.manager.ElTrader {
 
             MerchantRecipe echange;
 
-            Set<ItemStack> cles = echanges.keySet();
+            Set<ItemCreator> cles = echanges.keySet();
 
-            for (ItemStack cle : cles) {
+            for (ItemCreator cle : cles) {
 
                 echange = new MerchantRecipe(echanges.get(cle), Integer.MAX_VALUE);
                 echange.addIngredient(cle);

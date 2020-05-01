@@ -6,6 +6,7 @@ package com.elesia.eltrader.api.manager;
  * ElTrader can not be copied and/or distributed without the express permission of Elesia SAS.
  */
 
+import com.elesia.eltrader.api.utils.ItemCreator;
 import org.bukkit.Location;
 import org.bukkit.Server;
 import org.bukkit.inventory.ItemStack;
@@ -17,10 +18,10 @@ public abstract class ElTrader {
     private String flatname;
     private String affichage;
     private Location location;
-    private Map<ItemStack, ItemStack> trades;
+    private Map<ItemCreator, ItemCreator> trades;
     private Server server;
 
-    public ElTrader(String flatName, String aff, Location loc, Map<ItemStack, ItemStack> echanges, Server server) {
+    public ElTrader(String flatName, String aff, Location loc, Map<ItemCreator, ItemCreator> echanges, Server server) {
         this.flatname = flatName;
         this.affichage = aff;
         this.location = loc;

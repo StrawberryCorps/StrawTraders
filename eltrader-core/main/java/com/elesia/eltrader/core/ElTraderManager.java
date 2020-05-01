@@ -1,5 +1,6 @@
 package com.elesia.eltrader.core;
 
+import com.elesia.eltrader.api.utils.ItemCreator;
 import com.elesia.eltrader.core.commands.ElTraderCommand;
 import com.elesia.eltrader.core.listeners.entity.EntityDamage;
 import com.elesia.eltrader.core.listeners.player.PlayerBlock;
@@ -35,7 +36,7 @@ public class ElTraderManager extends com.elesia.eltrader.api.ElTraderManager {
         Objects.requireNonNull(getServer().getPluginCommand("eltrader")).setExecutor(new ElTraderCommand());
     }
 
-    public void ajouterTrader(String flatName, String aff, Location loc, Map<ItemStack, ItemStack> echanges, Server server){
+    public void ajouterTrader(String flatName, String aff, Location loc, Map<ItemCreator, ItemCreator> echanges, Server server){
 
         if(getByFlatName(flatName) == null){
             list.add(new ElTrader(flatName, aff, loc, echanges, server));

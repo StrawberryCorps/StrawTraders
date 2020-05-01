@@ -1,8 +1,10 @@
 package com.elesia.eltrader.api;
 
 import com.elesia.eltrader.api.manager.ElTrader;
+import com.elesia.eltrader.api.utils.ItemCreator;
 import org.bukkit.Location;
 import org.bukkit.Server;
+import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -25,7 +27,7 @@ public abstract class ElTraderManager extends JavaPlugin {
 
     public static String getPrefix() { return "§8[§9ElTrader§8] §r"; }
 
-    public abstract void ajouterTrader(String flatName, String aff, Location loc, Map<ItemStack, ItemStack> echanges, Server server);
+    public abstract void ajouterTrader(String flatName, String aff, Location loc, Map<ItemCreator, ItemCreator> echanges, Server server);
 
     public abstract void killAllTraders();
 

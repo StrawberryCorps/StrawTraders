@@ -27,25 +27,35 @@ public class ItemCreator extends ItemStack implements Comparable<ItemCreator> {
 
     public ItemCreator(Material type, int amount, String name, int position) {
         super(type, amount);
-        ItemMeta meta = this.getItemMeta();
+        ItemMeta meta = super.getItemMeta();
         meta.setDisplayName(name);
-        this.setItemMeta(meta);
-        this.position = position;
-    }
-
-    public ItemCreator(ItemStack stack, int position) throws IllegalArgumentException {
-        super(stack);
-        ItemMeta meta = this.getItemMeta();
         meta.addEnchant(Enchantment.DURABILITY, 1, true);
         meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         meta.getPersistentDataContainer().set(new NamespacedKey(ElTraderManager.getInstance(), "quete"), PersistentDataType.STRING, "oui");
-        this.setItemMeta(meta);
+        super.setItemMeta(meta);
+        this.position = position;
+    }
+
+    public ItemCreator(Material type, int amount, String name) {
+        super(type, amount);
+        ItemMeta meta = super.getItemMeta();
+        meta.setDisplayName(name);
+        meta.addEnchant(Enchantment.DURABILITY, 1, true);
+        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        meta.getPersistentDataContainer().set(new NamespacedKey(ElTraderManager.getInstance(), "quete"), PersistentDataType.STRING, "oui");
+        super.setItemMeta(meta);
+        this.position = 0;
+    }
+
+    public ItemCreator(Material type, int amount, int position) {
+        super(type, amount);
         this.position = position;
     }
 
     @Override
     public int compareTo(ItemCreator o) {
-        return Integer.compare(o.position, position);
+        return Integer.compare(position, o.position);
     }
 }
