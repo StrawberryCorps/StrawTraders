@@ -4,6 +4,7 @@ import com.elesia.eltrader.api.ElTraderManager;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -15,29 +16,36 @@ import org.bukkit.persistence.PersistentDataType;
  * ElTrader can not be copied and/or distributed without the express permission of Elesia SAS.
  */
 
-public class ItemCreator {
+public class ItemCreator extends ItemStack implements Comparable<ItemCreator> {
 
-    public static ItemStack creerItemQuete(Material mat){
-        return creerItemQuete(new ItemStack(mat));
+    private int position;
+
+    public ItemCreator(Material type, int position) {
+        super(type);
+        this.position = position;
     }
-    public static ItemStack creerItemQuete(Material mat, int amount, String name){
-        ItemStack item = new ItemStack(mat, amount);
-        ItemMeta meta = item.getItemMeta();
+
+    public ItemCreator(Material type, int amount, String name, int position) {
+        super(type, amount);
+        ItemMeta meta = this.getItemMeta();
         meta.setDisplayName(name);
-        item.setItemMeta(meta);
-        return creerItemQuete(item);
+        this.setItemMeta(meta);
+        this.position = position;
     }
 
-    public static ItemStack creerItemQuete(ItemStack item){
-        ItemMeta meta = item.getItemMeta();
+    public ItemCreator(ItemStack stack, int position) throws IllegalArgumentException {
+        super(stack);
+        ItemMeta meta = this.getItemMeta();
         meta.addEnchant(Enchantment.DURABILITY, 1, true);
         meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         meta.getPersistentDataContainer().set(new NamespacedKey(ElTraderManager.getInstance(), "quete"), PersistentDataType.STRING, "oui");
-        item.setItemMeta(meta);
-
-        return item;
-
+        this.setItemMeta(meta);
+        this.position = position;
     }
 
+    @Override
+    public int compareTo(ItemCreator o) {
+        return Integer.compare(o.position, position);
+    }
 }
