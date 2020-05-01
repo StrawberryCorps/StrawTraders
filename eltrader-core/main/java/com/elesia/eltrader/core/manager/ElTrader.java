@@ -62,8 +62,11 @@ public class ElTrader extends com.elesia.eltrader.api.manager.ElTrader {
 
                 listTrades.add(echange);
             }
-
             ((WanderingTrader) entite).setRecipes(listTrades);
+
+            for(int i = 0; i < listTrades.size(); i++){
+                ((WanderingTrader) entite).setRecipe(i, listTrades.get(i));
+            }
 
             server.getLogger().info("   -> Ajout d'un ElTrader " + aff + " à " + loc.toString() + " avec " + listTrades.size() + " échanges différents...");
 
