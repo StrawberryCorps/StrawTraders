@@ -32,7 +32,7 @@ public class ElTraderManager extends com.elesia.eltrader.api.ElTraderManager {
         getServer().getLogger().info(getPrefix() + "Activation du plugin de traders...");
         getServer().getPluginManager().registerEvents(new EntityDamage(this),this);
         getServer().getPluginManager().registerEvents(new PlayerBlock(this),this);
-        getServer().getPluginManager().registerEvents(new PlayerTrade(this),this);
+        //getServer().getPluginManager().registerEvents(new PlayerTrade(this),this);
         Objects.requireNonNull(getServer().getPluginCommand("eltrader")).setExecutor(new ElTraderCommand());
     }
 
