@@ -4,8 +4,6 @@ import com.elesia.eltrader.api.manager.ElTrader;
 import com.elesia.eltrader.api.utils.ItemCreator;
 import org.bukkit.Location;
 import org.bukkit.Server;
-import org.bukkit.entity.Item;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.List;

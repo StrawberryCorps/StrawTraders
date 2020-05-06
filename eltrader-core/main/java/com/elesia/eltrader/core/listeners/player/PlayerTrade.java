@@ -3,7 +3,6 @@ package com.elesia.eltrader.core.listeners.player;
 import com.elesia.eltrader.api.ElTraderManager;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
-import org.bukkit.Server;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

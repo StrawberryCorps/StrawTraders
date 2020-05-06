@@ -82,6 +82,4 @@ public class ElTrader extends com.elesia.eltrader.api.manager.ElTrader {
         server.getLogger().info("   -> " + ElTraderManager.getPrefix() + " Suppression du Trader... " + flatName);
         return flatName;
     }
-
-
 }

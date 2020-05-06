@@ -4,11 +4,9 @@ import com.elesia.eltrader.api.utils.ItemCreator;
 import com.elesia.eltrader.core.commands.ElTraderCommand;
 import com.elesia.eltrader.core.listeners.entity.EntityDamage;
 import com.elesia.eltrader.core.listeners.player.PlayerBlock;
-import com.elesia.eltrader.core.listeners.player.PlayerTrade;
 import com.elesia.eltrader.core.manager.ElTrader;
 import org.bukkit.Location;
 import org.bukkit.Server;
-import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +30,6 @@ public class ElTraderManager extends com.elesia.eltrader.api.ElTraderManager {
         getServer().getLogger().info(getPrefix() + "Activation du plugin de traders...");
         getServer().getPluginManager().registerEvents(new EntityDamage(this),this);
         getServer().getPluginManager().registerEvents(new PlayerBlock(this),this);
-        //getServer().getPluginManager().registerEvents(new PlayerTrade(this),this);
         Objects.requireNonNull(getServer().getPluginCommand("eltrader")).setExecutor(new ElTraderCommand());
     }
 

@@ -9,7 +9,6 @@ package com.elesia.eltrader.api.manager;
 import com.elesia.eltrader.api.utils.ItemCreator;
 import org.bukkit.Location;
 import org.bukkit.Server;
-import org.bukkit.inventory.ItemStack;
 
 import java.util.Map;
 
