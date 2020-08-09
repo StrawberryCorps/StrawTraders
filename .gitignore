@@ -1,4 +1,4 @@
 /.idea/
-/eltrader-api/target/
-/eltrader-core/dependency-reduced-pom.xml
+/StrawTrader-api/target/
+/StrawTrader-core/dependency-reduced-pom.xml
 /elTrader.iml

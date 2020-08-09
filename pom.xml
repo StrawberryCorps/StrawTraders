@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.elesia</groupId>
-    <artifactId>eltrader</artifactId>
+    <groupId>bzh.strawberry</groupId>
+    <artifactId>strawTrader</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.1-ALPHA</version>
+    <version>0.0.1</version>
     <modules>
-        <module>eltrader-api</module>
-        <module>eltrader-core</module>
+        <module>strawTrader-api</module>
+        <module>strawTrader-core</module>
     </modules>
 
     <properties>
@@ -25,13 +25,6 @@
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
     </repositories>
-
-    <distributionManagement>
-        <repository>
-            <id>elesia-repo</id>
-            <url>http://repo.dev.elesia.org/repository/public/</url>
-        </repository>
-    </distributionManagement>
 
     <build>
         <plugins>
@@ -57,21 +50,15 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <serverId>elesia-repo</serverId>
-                    <nexusUrl>http://repo.dev.elesia.org/repository/public/</nexusUrl>
-                    <skipStaging>true</skipStaging>
-                </configuration>
             </plugin>
         </plugins>
     </build>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.spigotmc</groupId>
                 <artifactId>spigot-api</artifactId>
-                <version>1.15.2-R0.1-SNAPSHOT</version>
+                <version>1.16.1-R0.1-SNAPSHOT</version>
                 <scope>provided</scope>
             </dependency>
         </dependencies>

@@ -1,0 +1,12 @@
+name: StrawTrader
+main: bzh.strawberry.strawTrader.core.StrawTraderManager
+version: 0.0.1
+author: Uicias
+api-version: 1.16
+description: Plugin to create and manage Trader
+commands:
+  strawtrader:
+    description: Command to list or remove traders
+    usage: /<command> [remove | list]
+    aliases:
+      - traders
